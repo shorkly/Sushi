@@ -28,6 +28,7 @@ a {
 }
 
 img {
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -44,7 +45,11 @@ header {
   font-weight: bold;
 }
 header .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 header .head .logo {
@@ -65,27 +70,39 @@ header .btn {
   border: 3px solid transparent;
   cursor: pointer;
   margin-top: 28px;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 header .btn:hover {
   background: #fff;
   color: #f26522;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border: 3px solid #f26522;
 }
 header .btn:active {
   background: #f26522;
   color: #fff;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   border: 3px solid #fff;
 }
 
 main {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   color: #080808;
 }
 main .info .headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 main .info .caption {
@@ -115,9 +132,16 @@ main .info .actualPositions h3 {
 }
 main .info .actualPositions ul {
   margin: 35px 0 43px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 main .info .actualPositions ul li:not(:last-child) {
@@ -126,8 +150,15 @@ main .info .actualPositions ul li:not(:last-child) {
   height: 100%;
   border: 2px solid #acacac;
   border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0 30px;
 }
@@ -170,11 +201,20 @@ main .info .actualPositions ul .set {
   height: 90%;
 }
 main .offer {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   background: #6dcff6;
 }
 main .offer .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 main .offer h2 {
@@ -200,11 +240,13 @@ main .offer .arr {
   position: relative;
 }
 main .offer .next {
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   bottom: 190px;
   left: 100px;
 }
 main .offer .prev {
+  -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
   bottom: 160px;
   right: 100px;
@@ -217,10 +259,12 @@ main .offer .slick-dots li {
 }
 main .offer .slick-dots li.slick-active button:before {
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   color: white;
 }
 main .offer .slick-dots li button:before {
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   color: white;
 }
 main .offer .slick-dots li button:before {
@@ -235,16 +279,74 @@ main .offer .slick-slide img {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 70px;
   font-weight: bold;
 }
 
+@media screen and (max-width: 445px) {
+  main .info .caption {
+    line-height: 42px;
+    font-size: 21px;
+  }
+
+  main .info .descr {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 820px) {
+  main .offer h2 {
+    font-size: 27px;
+    text-align: center;
+  }
+
+  header .btn {
+    display: none;
+  }
+
+  header .head .logo {
+    width: 140px;
+    height: 96px;
+    background-position: 0 0;
+  }
+}
+@media screen and (max-width: 970px) {
+  main .info .caption {
+    font-size: 28px;
+  }
+
+  main .info .descr {
+    font-size: 21px;
+  }
+
+  main .info .actualPositions ul li:not(:last-child) {
+    height: 355px;
+  }
+
+  main .offer .slick-slide {
+    margin-bottom: 100px;
+  }
+
+  main .offer .slick-dots li button:before {
+    font-size: 35px;
+  }
+
+  main .offer .slick-dots {
+    bottom: 35px;
+  }
+}
 @media screen and (max-width: 1335px) {
   img {
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
   }
 
@@ -295,7 +397,9 @@ footer {
   }
 
   main .info .actualPositions ul {
+    -ms-flex-wrap: wrap-reverse;
     flex-wrap: wrap-reverse;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
   main .info .actualPositions ul li:not(:last-child) {
@@ -307,59 +411,7 @@ footer {
   }
   main .info .actualPositions ul li .set {
     height: 75%;
+    -o-object-fit: contain;
     object-fit: contain;
   }
 }
-@media screen and (max-width: 970px) {
-  main .info .caption {
-    font-size: 28px;
-  }
-
-  main .info .descr {
-    font-size: 21px;
-  }
-
-  main .info .actualPositions ul li:not(:last-child) {
-    height: 355px;
-  }
-
-  main .offer .slick-slide {
-    margin-bottom: 100px;
-  }
-
-  main .offer .slick-dots li button:before {
-    font-size: 35px;
-  }
-
-  main .offer .slick-dots {
-    bottom: 35px;
-  }
-}
-@media screen and (max-width: 820px) {
-  main .offer h2 {
-    font-size: 27px;
-    text-align: center;
-  }
-
-  header .btn {
-    display: none;
-  }
-
-  header .head .logo {
-    width: 140px;
-    height: 96px;
-    background-position: 0 0;
-  }
-}
-@media screen and (max-width: 445px) {
-  main .info .caption {
-    line-height: 42px;
-    font-size: 21px;
-  }
-
-  main .info .descr {
-    font-size: 16px;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
